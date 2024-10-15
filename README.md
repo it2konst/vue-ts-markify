@@ -1,3 +1,5 @@
+# Real test task: React, Redux, React-Router.
+
 <div align="left">
    <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="react" alt="react" width="40" height="40"/>&nbsp;
    <img src="https://github.com/devicons/devicon/blob/master/icons/reactrouter/reactrouter-original.svg" title="reactrouter" alt="reactrouter" width="40" height="40"/>&nbsp;
