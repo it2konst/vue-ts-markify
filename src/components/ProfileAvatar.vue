@@ -5,7 +5,9 @@ const { name } = defineProps<{ name: string }>()
 <template>
   <div class="profile-avatar">
     <img src="/public/avatar.png" class="profile-avatar__image" alt="Изображение пользователя" />
-    <div>Привет,{{ name }}</div>
+    <div>
+      Привет,&nbsp;<strong>{{ name }}</strong>
+    </div>
   </div>
 </template>
 
