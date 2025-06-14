@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const { name } = defineProps<{ name: string }>()
+const { name } = defineProps<{ name: string }>();
 </script>
 
 <template>
   <div class="profile-avatar">
-    <img src="/public/avatar.png" class="profile-avatar__image" alt="Изображение пользователя" />
+    <img src="/avatar.png" class="profile-avatar__image" alt="Изображение пользователя" />
     <div>
       Привет,&nbsp;<strong>{{ name }}</strong>
     </div>
