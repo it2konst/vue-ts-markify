@@ -4,6 +4,7 @@ import axios from 'axios';
 
 export const API_ROUTES = {
   profile: `profile`,
+  categories: `categories`,
 };
 
 export const http = axios.create({
