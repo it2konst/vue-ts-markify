@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted } from 'vue';
 import ProfileAvatar from './components/ProfileAvatar.vue';
 import { API_ROUTS } from './api';
-import type { Profile } from './interfaces/profile';
+import type { Profile } from './interfaces/profile.interface';
+import { useProfileStore } from './stores/profile.store';
 
-const profile = ref<Profile>();
+const store = useProfileStore();
 
 async function fetchProfile() {
   const data = await fetch(API_ROUTS.profile);
   const res = (await data.json()) as Profile[];
-  profile.value = res[0];
+  store.profile = res[0];
 }
 
 onMounted(() => {
@@ -20,7 +21,7 @@ onMounted(() => {
 <template>
   <div class="app">
     <nav class="nav">
-      <ProfileAvatar v-if="profile" :name="profile.name" />
+      <ProfileAvatar v-if="store.profile" :name="store.profile.name" />
     </nav>
     <main>Контент</main>
   </div>

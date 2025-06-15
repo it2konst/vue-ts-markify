@@ -13,7 +13,8 @@
 
 body {
   color: var(--color-fg);
-  background: var(--color-bg);
+  /* background: var(--color-bg); */
+  background: #10000080;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   text-rendering: optimizeLegibility;
