@@ -17,7 +17,7 @@ onMounted(() => {
       <a :href="`/${item.alias}`">{{ item.name }}</a>
     </li>
     <li>
-      <ButtonIcon>
+      <ButtonIcon @click="store.createCategory">
         <IconPlus />
       </ButtonIcon>
     </li>
