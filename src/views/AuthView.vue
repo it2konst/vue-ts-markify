@@ -1,11 +1,18 @@
 <script setup lang="ts">
 import ButtonPrimary from '@/components/ButtonPrimary.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+function redirectToMain() {
+  router.push({ name: 'main' });
+}
 </script>
 <template>
   <div class="auth">
     <div class="auth__form">
       <h1 class="auth__header">Bookmark's</h1>
-      <ButtonPrimary>Вход</ButtonPrimary>
+      <ButtonPrimary @click="redirectToMain">Вход</ButtonPrimary>
     </div>
   </div>
 </template>

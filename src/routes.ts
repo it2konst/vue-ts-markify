@@ -11,6 +11,7 @@ export const router = createRouter({
     {
       path: '/main',
       component: MainView,
+      name: 'main',
     },
   ],
   history: createWebHistory(),
