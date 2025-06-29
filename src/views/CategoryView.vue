@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import type { Category } from '@/interfaces/category.interface';
 import { useCategoryStore } from '@/stores/categories.store';
@@ -22,6 +22,13 @@ watch(
     }
   },
 );
+
+onMounted(() => {
+  category.value = categoryStore.getCategoryByAlias(route.params.alias);
+  if (category.value) {
+    bookmarkStore.fetchBookmarks(category.value?.id);
+  }
+});
 </script>
 <template>
   Category:
