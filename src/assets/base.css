@@ -13,6 +13,7 @@
 }
 
 body {
+  padding-inline: 20px;
   color: var(--color-fg);
   /* background: var(--color-bg); */
   background: #10000080;

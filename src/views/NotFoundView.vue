@@ -5,28 +5,26 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 function redirectToMain() {
-  router.push({
-    name: 'main',
-  });
+  router.push('/');
 }
 </script>
 <template>
-  <div class="auth">
-    <div class="auth__form">
-      <h1 class="auth__header">Bookmark's</h1>
-      <ButtonPrimary @click="redirectToMain">Вход</ButtonPrimary>
+  <div class="not-found">
+    <div class="not-found__form">
+      <h1 class="not-found__header">404</h1>
+      <ButtonPrimary @click="redirectToMain">На главную</ButtonPrimary>
     </div>
   </div>
 </template>
 
 <style scoped>
-.auth {
+.not-found {
   display: grid;
   place-items: center;
   min-height: 100vh;
 }
 
-.auth__form {
+.not-found__form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,8 +32,8 @@ function redirectToMain() {
   gap: 52px;
 }
 
-.auth__header {
-  font-size: 52px;
+.not-found__header {
+  font-size: 128px;
   font-weight: 700;
 }
 </style>
