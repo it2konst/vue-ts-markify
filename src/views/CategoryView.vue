@@ -1,10 +1,25 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
+import { ref, watch } from 'vue';
+import { useRoute, onBeforeRouteUpdate } from 'vue-router';
+import { useCategoryStore } from '@/stores/categories.store';
+import type { Category } from '@/interfaces/category.interface';
 
 const route = useRoute();
-console.log(route.params.alias);
+const state = useCategoryStore();
+const category = ref<Category>();
+
+watch(
+  () => state.categories,
+  () => {
+    category.value = state.getCategoryByAlias(route.params.alias);
+  },
+);
+
+onBeforeRouteUpdate((to) => {
+  category.value = state.getCategoryByAlias(to.params.alias);
+});
 </script>
 <template>
-  Category
-  {{ route.params.alias }}
+  Category:
+  {{ category?.name }}
 </template>
