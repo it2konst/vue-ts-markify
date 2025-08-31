@@ -5,7 +5,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 function redirectToMain() {
-  router.push('/');
+  router.push('/main');
 }
 </script>
 <template>
